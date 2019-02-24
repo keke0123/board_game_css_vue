@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import BlockDefault from '@/components/Block'
 export default {
   name: 'HelloWorld',
   props: {
