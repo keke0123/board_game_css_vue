@@ -1,22 +1,21 @@
 <template>
 
     <div class="box">
-        <h3>home page</h3>
-        <div class="block-column block-down">
-            <BlockDefaultVue color="red" name="Korea" :price="100"/>
-            <BlockDefaultVue/>
-            <BlockRare/>
-            <BlockDefaultVue/>
-            <BlockDefaultVue/>
-            <BlockSpecial/>
+        <div class="block-column block-down" >
+            <BlockDefaultVue color="red" name="Korea" isRotated="down" :price="100" @sendData="sended"/>
+            <BlockDefaultVue isRotated="down"/>
+            <BlockRare isRotated="down"/>
+            <BlockDefaultVue isRotated="down"/>
+            <BlockDefaultVue isRotated="down"/>
+            <BlockSpecial isRotated="down"/>
         </div>
         <div class="block-column block-left">
-            <BlockDefaultVue color="red" name="Korea" :price="100"/>
-            <BlockDefaultVue/>
-            <BlockRare/>
-            <BlockDefaultVue/>
-            <BlockDefaultVue/>
-            <BlockSpecial/>
+            <BlockDefaultVue color="red" name="Korea" isRotated="left" :price="100"/>
+            <BlockDefaultVue isRotated="left"/>
+            <BlockRare isRotated="left"/>
+            <BlockDefaultVue isRotated="left"/>
+            <BlockDefaultVue isRotated="left"/>
+            <BlockSpecial isRotated="left"/>
         </div>
         <div class="block-column block-up">
             <BlockDefaultVue color="red" name="Korea" :price="100"/>
@@ -47,6 +46,12 @@ export default {
         BlockDefaultVue,
         BlockRare,
         BlockSpecial,
+    },
+    methods:{
+        sended:function(e){
+            console.log("sended");
+            console.log(e);
+        }
     }
 }
 </script>
@@ -54,38 +59,42 @@ export default {
 <style scoped>
     .box{
         position:relative;
-        width:1000px;
-        margin: 200px auto;
+        display: flex;
+        width:700px;
+        height:700px;
+        margin: 100px auto;
+        border: 3px solid black;
         
     }
     .block-column{
-        /* position:absolute; */
+        position:absolute;
         width: 680px;
         display:block;
+        top:250px;
         
     }
     .block-left{
         position:absolute;
         width:100%;
         /* transform-origin: 0% 0%; */
-        transform: rotate(90deg) translateX(121px) translateY(170px) scale(0.5);
+        transform: rotate(90deg) translateX(46px) translateY(170px) scale(0.5);
     }
     .block-right{
         position:absolute;
         width:100%;
         /* transform-origin: 0% 0%; */
-        transform: rotate(180deg) translateX(121px) translateY(170px) scale(0.5);
+        transform: rotate(180deg) translateX(46px) translateY(170px) scale(0.5);
     }
     .block-up{
         position:absolute;
         width:100%;
         /* transform-origin: 0% 0%; */
-        transform: rotate(270deg) translateX(121px) translateY(170px) scale(0.5);
+        transform: rotate(270deg) translateX(46px) translateY(170px) scale(0.5);
     }
     .block-down{
         position:absolute;
         width:100%;
         /* transform-origin: 0% 0%; */
-        transform: translateX(121px) translateY(170px) scale(0.5);
+        transform: translateX(46px) translateY(170px) scale(0.5);
     }
 </style>
