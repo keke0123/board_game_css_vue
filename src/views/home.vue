@@ -1,38 +1,40 @@
 <template>
-
-    <div class="box">
-        <div class="block-column block-down" >
-            <BlockDefaultVue color="red" name="Korea" isRotated="down" :price="100" @sendData="sended"/>
-            <BlockDefaultVue isRotated="down"/>
-            <BlockRare isRotated="down"/>
-            <BlockDefaultVue isRotated="down"/>
-            <BlockDefaultVue isRotated="down"/>
-            <BlockSpecial isRotated="down"/>
+    <div>
+        <div class="box">
+            <div class="block-column block-down" >
+                <BlockDefaultVue color="red" name="Korea" isRotated="down" :price="100" @sendData="sended"/>
+                <BlockDefaultVue isRotated="down"/>
+                <BlockRare isRotated="down"/>
+                <BlockDefaultVue isRotated="down"/>
+                <BlockDefaultVue isRotated="down"/>
+                <BlockSpecial isRotated="down"/>
+            </div>
+            <div class="block-column block-left">
+                <BlockDefaultVue color="red" name="Korea" isRotated="left" :price="100"/>
+                <BlockDefaultVue isRotated="left"/>
+                <BlockRare isRotated="left"/>
+                <BlockDefaultVue isRotated="left"/>
+                <BlockDefaultVue isRotated="left"/>
+                <BlockSpecial isRotated="left"/>
+            </div>
+            <div class="block-column block-up">
+                <BlockDefaultVue color="red" name="Korea" :price="100"/>
+                <BlockDefaultVue/>
+                <BlockRare/>
+                <BlockDefaultVue/>
+                <BlockDefaultVue/>
+                <BlockSpecial/>
+            </div>
+            <div class="block-column block-right">
+                <BlockDefaultVue color="red" name="Korea" :price="100"/>
+                <BlockDefaultVue/>
+                <BlockRare/>
+                <BlockDefaultVue/>
+                <BlockDefaultVue/>
+                <BlockSpecial/>
+            </div>
         </div>
-        <div class="block-column block-left">
-            <BlockDefaultVue color="red" name="Korea" isRotated="left" :price="100"/>
-            <BlockDefaultVue isRotated="left"/>
-            <BlockRare isRotated="left"/>
-            <BlockDefaultVue isRotated="left"/>
-            <BlockDefaultVue isRotated="left"/>
-            <BlockSpecial isRotated="left"/>
-        </div>
-        <div class="block-column block-up">
-            <BlockDefaultVue color="red" name="Korea" :price="100"/>
-            <BlockDefaultVue/>
-            <BlockRare/>
-            <BlockDefaultVue/>
-            <BlockDefaultVue/>
-            <BlockSpecial/>
-        </div>
-        <div class="block-column block-right">
-            <BlockDefaultVue color="red" name="Korea" :price="100"/>
-            <BlockDefaultVue/>
-            <BlockRare/>
-            <BlockDefaultVue/>
-            <BlockDefaultVue/>
-            <BlockSpecial/>
-        </div>
+        <BlockLine/>
     </div>
 </template>
 
@@ -40,12 +42,15 @@
 import BlockDefaultVue from '@/components/BlockDefault.vue';
 import BlockRare from '@/components/BlockRare.vue';
 import BlockSpecial from '@/components/BlockSpecial.vue';
+import BlockLine from '@/components/BlockLine';
+
 export default {
     name:'home',
     components:{
         BlockDefaultVue,
         BlockRare,
         BlockSpecial,
+        BlockLine,
     },
     methods:{
         sended:function(e){
@@ -57,6 +62,7 @@ export default {
 </script>
 
 <style scoped>
+    
     .box{
         position:relative;
         display: flex;
