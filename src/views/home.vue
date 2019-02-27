@@ -69,6 +69,7 @@ export default {
         width:700px;
         height:700px;
         margin: 100px auto;
+        margin-bottom:30px;
         border: 3px solid black;
         
     }
